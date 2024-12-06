@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ChasisIKAnimationMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 1
+  - m_Path: Armature/Bone
+    m_Weight: 1
+  - m_Path: Armature/Bone/Brazo.IK.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Brazo.IK.L/Brazo.IK.L_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Brazo.IK2.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Brazo.IK2.R/Brazo.IK2.R_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.L/Leg.002.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.L/Leg.002.L/Leg.003.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.L/Leg.002.L/Leg.003.L/Leg.004.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.L/Leg.002.L/Leg.003.L/Leg.004.L/Leg.005.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.L/Leg.002.L/Leg.003.L/Leg.004.L/Leg.005.L/Leg.006.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.L/Leg.002.L/Leg.003.L/Leg.004.L/Leg.005.L/Leg.006.L/Leg.007.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.L/Leg.002.L/Leg.003.L/Leg.004.L/Leg.005.L/Leg.006.L/Leg.007.L/Leg.007.L_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.R/Leg.002.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.R/Leg.002.R/Leg.003.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.R/Leg.002.R/Leg.003.R/Leg.004.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.R/Leg.002.R/Leg.003.R/Leg.004.R/Leg.005.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.R/Leg.002.R/Leg.003.R/Leg.004.R/Leg.005.R/Leg.006.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.R/Leg.002.R/Leg.003.R/Leg.004.R/Leg.005.R/Leg.006.R/Leg.007.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Leg.R/Leg.002.R/Leg.003.R/Leg.004.R/Leg.005.R/Leg.006.R/Leg.007.R/Leg.007.R_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.002
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.002/Brazo.003.L.006
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.002/Brazo.003.L.006/Brazo.003.L.008
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.002/Brazo.003.L.006/Brazo.003.L.008/Brazo.003.L.008_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.003
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.003/Brazo.003.L.007
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.003/Brazo.003.L.007/Brazo.003.L.010
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.003/Brazo.003.L.007/Brazo.003.L.010/Brazo.003.L.010_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.004
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.004/Brazo.003.L.005
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.004/Brazo.003.L.005/Brazo.003.L.009
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.004/Brazo.003.L.005/Brazo.003.L.009/Brazo.003.L.009_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.011
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.011/Brazo.003.L.012
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.011/Brazo.003.L.012/Brazo.003.L.013
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.L/Brazo.001.L/Brazo.002.L/Brazo.003.L/Brazo.003.L.001/Brazo.003.L.011/Brazo.003.L.012/Brazo.003.L.013/Brazo.003.L.013_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Arma
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Arma/Arma_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.002
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.002/Brazo.003.R.006
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.002/Brazo.003.R.006/Brazo.003.R.008
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.002/Brazo.003.R.006/Brazo.003.R.008/Brazo.003.R.008_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.003
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.003/Brazo.003.R.007
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.003/Brazo.003.R.007/Brazo.003.R.010
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.003/Brazo.003.R.007/Brazo.003.R.010/Brazo.003.R.010_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.004
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.004/Brazo.003.R.005
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.004/Brazo.003.R.005/Brazo.003.R.009
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.004/Brazo.003.R.005/Brazo.003.R.009/Brazo.003.R.009_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.011
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.011/Brazo.003.R.012
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.011/Brazo.003.R.012/Brazo.003.R.013
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Brazo.R/Brazo.001.R/Brazo.002.R/Brazo.003.R/Brazo.003.R.001/Brazo.003.R.011/Brazo.003.R.012/Brazo.003.R.013/Brazo.003.R.013_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Cuello
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Cuello/Cabeza
+    m_Weight: 1
+  - m_Path: Armature/Bone/Cintura/Torso/Cuello/Cabeza/Cabeza_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Leg.IK.L
+    m_Weight: 1
+  - m_Path: Armature/Bone/Leg.IK.L/Leg.IK.L_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Leg.IK.R
+    m_Weight: 1
+  - m_Path: Armature/Bone/Leg.IK.R/Leg.IK.R_end
+    m_Weight: 1
+  - m_Path: Armature/Bone/Rotacion Cabeza
+    m_Weight: 1
+  - m_Path: Armature/Bone/Rotacion Cabeza/Rotacion Cabeza_end
+    m_Weight: 1
+  - m_Path: Gun
+    m_Weight: 1
+  - m_Path: Mesh
+    m_Weight: 1

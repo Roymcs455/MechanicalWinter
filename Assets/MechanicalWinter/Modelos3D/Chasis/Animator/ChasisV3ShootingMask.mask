@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ChasisV3ShootingMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: ChasisArmature
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Arm.IK.L
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Arm.IK.R
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Arm.Target.L
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Arm.Target.R
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Hip.L
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Hip.L/Leg.L
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Hip.L/Leg.L/Shin.L
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Hip.L/Leg.L/Shin.L/Foot.L
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Hip.L/Leg.L/Shin.L/Foot.L/FootTip.L
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Hip.R
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Hip.R/Leg.R
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Hip.R/Leg.R/Shin.R
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Hip.R/Leg.R/Shin.R/Foot.R
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Hip.R/Leg.R/Shin.R/Foot.R/FootTip.R
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Neck
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Neck/Head
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L/Hand.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L/Hand.L/Fingers.001.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L/Hand.L/Fingers.001.L/Fingers.002.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L/Hand.L/Fingers.001.L/Fingers.002.L/Fingers.003.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L/Hand.L/Index.001.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L/Hand.L/Index.001.L/Index.002.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L/Hand.L/Index.001.L/Index.002.L/Index.003.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L/Hand.L/Thumb.001.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L/Hand.L/Thumb.001.L/Thumb.002.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.L/Arm.L/Forearm.L/Hand.L/Thumb.001.L/Thumb.002.L/Thumb.003.L
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Fingers.001.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Fingers.001.R/Fingers.002.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Fingers.001.R/Fingers.002.R/Fingers.003.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Index.001.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Index.001.R/Index.002.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Index.001.R/Index.002.R/Index.003.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Thumb.001.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Thumb.001.R/Thumb.002.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Thumb.001.R/Thumb.002.R/Thumb.003.R
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Weapon
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/Contollers/Torso/UpperTorso/Shoulder.R/Arm.R/Forearm.R/Hand.R/Weapon/Weapon.001
+    m_Weight: 1
+  - m_Path: ChasisArmature/ParentBone/HeadRoll
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Leg.IK.L
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Leg.IK.L/Leg.Target.L
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Leg.IK.R
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/Leg.IK.R/Leg.Target.R
+    m_Weight: 0
+  - m_Path: ChasisArmature/ParentBone/TorsoOrientation
+    m_Weight: 0
+  - m_Path: Gun
+    m_Weight: 0
+  - m_Path: MeshChasis
+    m_Weight: 0
