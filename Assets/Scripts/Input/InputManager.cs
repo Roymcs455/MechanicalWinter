@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour
     private PlayerControls playerControls;
     [Header("Input Actions Map")]
     public InputActionAsset inputActions;
-    public InputAction jumpAction, sprintAction,fireAction, resetAction;
+    public InputAction jumpAction, sprintAction, fireAction, resetAction;
     
 
     public static InputManager Instance {  get { return _instance; } }
@@ -26,10 +26,15 @@ public class InputManager : MonoBehaviour
     private void OnEnable()
     {
         playerControls.Enable();
-        jumpAction = inputActions.FindAction("Jump");       jumpAction.Enable();
-        sprintAction = inputActions.FindAction("Sprint");   sprintAction.Enable();
-        fireAction = inputActions.FindAction("Fire");       fireAction.Enable();
-        resetAction = inputActions.FindAction("Reset"); resetAction.Enable();
+        jumpAction = inputActions.FindAction("Jump");       
+        jumpAction.Enable();
+        sprintAction = inputActions.FindAction("Sprint");   
+        sprintAction.Enable();
+        fireAction = inputActions.FindAction("Fire");       
+        fireAction.Enable();
+        resetAction = inputActions.FindAction("Reset"); 
+        resetAction.Enable();
+
     }
     private void OnDisable()
     {
@@ -50,8 +55,8 @@ public class InputManager : MonoBehaviour
         
         return playerControls.Player.Jump.ReadValue<bool>();
     }
-    public bool PlayerShootThisFrame()
-    {
-        return playerControls.Player.Fire.ReadValue<bool>();
-    }
+    //public bool PlayerShootThisFrame()
+    //{
+    //    return playerControls.Player.Fire.ReadValue<bool>();
+    //}
 }
