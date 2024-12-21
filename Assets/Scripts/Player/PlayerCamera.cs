@@ -16,6 +16,8 @@ public class PlayerCamera: MonoBehaviour
     Transform point;
     [SerializeField]
     float crosshairDistance=100f;
+    [SerializeField]
+    private LayerMask collidingLayer;
 
     private float xRotation= 0.0f, yRotation = 0.0f;
     private void Start()
@@ -38,7 +40,7 @@ public class PlayerCamera: MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
         RaycastHit target; 
-        if(Physics.Raycast(transform.position, transform.forward, out target, crosshairDistance))
+        if(Physics.Raycast(transform.position, transform.forward, out target, crosshairDistance,collidingLayer))
         {
             
             point.position = target.point;

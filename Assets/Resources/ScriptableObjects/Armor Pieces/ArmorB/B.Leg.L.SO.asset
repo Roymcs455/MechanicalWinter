@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfed3c6c89083424f94b1ab835662917, type: 3}
+  m_Name: B.Leg.L.SO
+  m_EditorClassIdentifier: 
+  pieceName: Type B Leg L
+  prefab: {fileID: 4543717196539838229, guid: 3d3eb0868657a8b40a85ce09bb257c2d, type: 3}
+  explosiveResistance: 1
+  antiMaterialResistance: 1
+  energyResistance: 1
+  weight: 100
+  pieceHealth: 100
+  chasisPart: 2
+  pieceLocation: 7
+  dependantSO: {fileID: 11400000, guid: 8a9fc5ab4e4a82647a850389c6d3a8d8, type: 2}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfed3c6c89083424f94b1ab835662917, type: 3}
+  m_Name: C.Arm.R.SO
+  m_EditorClassIdentifier: 
+  pieceName: Type C Right Leg
+  prefab: {fileID: 5580301334623798092, guid: 1f919d35bec59b0469d64c29323eac50, type: 3}
+  explosiveResistance: 1
+  antiMaterialResistance: 1
+  energyResistance: 1
+  weight: 100
+  pieceHealth: 100
+  chasisPart: 5
+  pieceLocation: 4
+  dependantSO: {fileID: 11400000, guid: fb8526eeb31881647ad77f7106e821ee, type: 2}

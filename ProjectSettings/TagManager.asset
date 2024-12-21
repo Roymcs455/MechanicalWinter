@@ -13,9 +13,9 @@ TagManager:
   - UI
   - Ground
   - Hitbox
-  - 
-  - 
-  - 
+  - Projectile
+  - Obstacle
+  - Crosshair
   - 
   - 
   - 

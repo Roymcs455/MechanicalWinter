@@ -5,13 +5,19 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Rigidbody rb;
-    // Start is called before the first frame update
     public LayerMask interactionMask;
+    public LayerMask ground;
+    public LayerMask hitboxLayer;
+
+    public float explosionRadius = 5.0f;
+    public float explosionPower = 10.0f;
+    public DamageTypes damageType;
+    public float damage = 0.0f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 15);
     }
     private void FixedUpdate()
     {
@@ -24,24 +30,35 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        
+        if (IsInLayerMask(collision.gameObject, interactionMask | hitboxLayer | ground))
         {
-            Destroy(gameObject,0.5f);
-            return;
-        }
+            Vector3 explosionPos = transform.position;
+            Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius,interactionMask | hitboxLayer);
+            foreach (Collider hit in colliders)
+            {
+                Rigidbody hitRB = hit.GetComponent<Rigidbody>();
+                float distance = (hit.transform.position - explosionPos).magnitude;
+                Damage appliedDamage = new Damage(DamageTypes.EXPLOSIVE, damage * distance / explosionRadius);
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Hitbox"))
-        {
-            Debug.Log("Colliding with (Hitbox) "+collision.gameObject.name);
+                ArmorPiece hitArmorPiece = hit.gameObject.GetComponent<ArmorPiece>();
+                if (hitArmorPiece != null)
+                    hitArmorPiece.ReceiveDamage(appliedDamage,gameObject.GetInstanceID());
+                
+                if (hitRB != null)
+                {
+                    hitRB.AddExplosionForce(explosionPower, explosionPos, explosionRadius, 3.0F,ForceMode.Impulse);
+                    //Debug.Log($"Exploding {hit.gameObject.name}");
+                }
+                
+            }
             Destroy(gameObject);
-            return;
-        }
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Default"))
-        {
-            Debug.Log("Colliding with (default) " + collision.gameObject.name);
-            return;
         }
         
 
+    }
+    private bool IsInLayerMask(GameObject obj, LayerMask mask)
+    {
+        return (mask.value & (1 << obj.layer)) != 0;
     }
 }

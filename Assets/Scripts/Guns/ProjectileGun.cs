@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileGun : MonoBehaviour
+public class ProjectileGun : MonoBehaviour,GunInterface
 {
     //Public
     public GameObject bullet;
@@ -16,13 +16,9 @@ public class ProjectileGun : MonoBehaviour
     public bool allowButtonHold;
     InputManager inputManager;
 
-    //Private
-    int bulletsLeft, bulletsShot;
-
-    //State
+    
     bool shooting, readyToShoot = true, reloading;
     
-    //References
     public Transform attackPoint;
 
     private void FireAction_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -44,7 +40,7 @@ public class ProjectileGun : MonoBehaviour
         inputManager.fireAction.performed += FireAction_performed;
         inputManager.fireAction.canceled += FireAction_canceled;
 
-        bulletsLeft = magazineSize;
+        
         readyToShoot = true;
     }
 
@@ -53,22 +49,22 @@ public class ProjectileGun : MonoBehaviour
         if (shooting == true)
             Shoot();
     }
-    void Shoot()
+    public void Shoot()
     {
         if (readyToShoot)
         {
             readyToShoot = false;
-            Vector3 direction = transform.forward;
-            Debug.Log("123"+direction);
-            float spreadX = Random.Range(-spread, spread);
-            float spreadY = Random.Range(-spread, spread);
+            Vector3 direction = transform.forward;  
+            float spreadX = Random.Range(-spread/100, spread/100);
+            float spreadY = Random.Range(-spread / 100, spread / 100);
             Vector3 directionWithSpread = direction + new Vector3(spreadX, spreadY,0);
             directionWithSpread.Normalize();
             GameObject currentBullet = Instantiate(bullet, attackPoint.position, transform.rotation );
             currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread * shootForce, ForceMode.VelocityChange);
 
             Invoke("ResetShoot", shootCooldown);
-
+            if(!allowButtonHold)
+                shooting = false;
         }
     }
     private void OnDestroy()

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfed3c6c89083424f94b1ab835662917, type: 3}
+  m_Name: B.Hip.SO
+  m_EditorClassIdentifier: 
+  pieceName: Type B Head
+  prefab: {fileID: 4833357683464182388, guid: f6da851e9bd550f4a988fd82d9a29c07, type: 3}
+  explosiveResistance: 1
+  antiMaterialResistance: 1
+  energyResistance: 1
+  weight: 100
+  pieceHealth: 0
+  chasisPart: 1
+  pieceLocation: 1
+  dependantSO: {fileID: 0}
