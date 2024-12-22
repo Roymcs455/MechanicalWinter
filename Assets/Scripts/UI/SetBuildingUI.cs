@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SetBuildingUI : MonoBehaviour
 {
-    
+
     [SerializeField]
     public Transform listedArmorPieces;
     [SerializeField]
@@ -14,7 +16,7 @@ public class SetBuildingUI : MonoBehaviour
     [SerializeField]
     public List<GameObject> instancesUIList;
     [SerializeField]
-    private Button  
+    private Button
         headButton,
         torsoButton,
         rightArmButton,
@@ -24,6 +26,11 @@ public class SetBuildingUI : MonoBehaviour
         sensonButton,
         weaponButton
         ;
+    [Header("Dropdown List")]
+    [SerializeField]
+    private TMP_Dropdown dropdown;
+    [SerializeField]
+    private List<TMP_Dropdown.OptionData> options = new List<TMP_Dropdown.OptionData>();
 
     
     private SetBuilder logic;
@@ -83,5 +90,25 @@ public class SetBuildingUI : MonoBehaviour
     public void SetPiece(ArmorPieceSO apSO)
     {
         logic.SetPiece(apSO);
+    }
+
+    public void ListSets(ProxySet[] setList)
+    {
+        foreach(ProxySet item in setList)
+        {
+            dropdown.options.Add(new TMP_Dropdown.OptionData(item.setName));
+        }
+        dropdown.AddOptions(options);
+        dropdown.RefreshShownValue();
+    }
+    public void AddOptionDropdown(ProxySet proxySet)
+    {
+        dropdown.options.Add(new TMP_Dropdown.OptionData(proxySet.setName));
+        dropdown.AddOptions(options);
+        dropdown.RefreshShownValue();
+    }
+    public void DropdownValueChanged()
+    {
+        logic.ChangeActiveSet(dropdown.value);
     }
 }

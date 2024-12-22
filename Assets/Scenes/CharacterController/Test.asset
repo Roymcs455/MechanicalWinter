@@ -1,0 +1,229 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9106131184276800655
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96468967439741488ad1b1af1ab44b9b, type: 3}
+  m_Name: ScanlinesVol
+  m_EditorClassIdentifier: 
+  active: 1
+  m_Intensity:
+    m_OverrideState: 1
+    m_Value: 0.421
+  m_Count:
+    m_OverrideState: 0
+    m_Value: 570
+  m_Speed:
+    m_OverrideState: 1
+    m_Value: -0.83
+  m_Flicker:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &-7410952011477806931
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aebac967aa993140ab1982d43b8450a, type: 3}
+  m_Name: GlitchVol
+  m_EditorClassIdentifier: 
+  active: 1
+  _weight:
+    m_OverrideState: 1
+    m_Value: 1
+  _power:
+    m_OverrideState: 1
+    m_Value: 0.048
+  _scale:
+    m_OverrideState: 1
+    m_Value: 1
+  _dispersion:
+    m_OverrideState: 1
+    m_Value: 0.006
+  _period:
+    m_OverrideState: 1
+    m_Value: 1
+  _color:
+    m_OverrideState: 0
+    m_Value:
+      _grad:
+        serializedVersion: 2
+        key0: {r: 0.773, g: 0.693, b: 1, a: 1}
+        key1: {r: 0, g: 0.98, b: 1, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
+        key4: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0, g: 0, b: 0, a: 0}
+        key6: {r: 0, g: 0, b: 0, a: 0}
+        key7: {r: 0, g: 0, b: 0, a: 0}
+        ctime0: 0
+        ctime1: 65535
+        ctime2: 0
+        ctime3: 0
+        ctime4: 0
+        ctime5: 0
+        ctime6: 0
+        ctime7: 0
+        atime0: 0
+        atime1: 0
+        atime2: 0
+        atime3: 0
+        atime4: 0
+        atime5: 0
+        atime6: 0
+        atime7: 0
+        m_Mode: 0
+        m_ColorSpace: -1
+        m_NumColorKeys: 2
+        m_NumAlphaKeys: 2
+      _pixels:
+      - {r: 0.773, g: 0.693, b: 1, a: 1}
+      - {r: 0.7480645, g: 0.7022581, b: 1, a: 1}
+      - {r: 0.72312903, g: 0.71151614, b: 1, a: 1}
+      - {r: 0.69819355, g: 0.72077423, b: 1, a: 1}
+      - {r: 0.67325807, g: 0.73003227, b: 1, a: 1}
+      - {r: 0.6483226, g: 0.73929036, b: 1, a: 1}
+      - {r: 0.6233871, g: 0.7485484, b: 1, a: 1}
+      - {r: 0.5984516, g: 0.7578065, b: 1, a: 1}
+      - {r: 0.57351613, g: 0.7670645, b: 1, a: 1}
+      - {r: 0.54858065, g: 0.7763226, b: 1, a: 1}
+      - {r: 0.52364516, g: 0.78558064, b: 1, a: 1}
+      - {r: 0.49870968, g: 0.7948387, b: 1, a: 1}
+      - {r: 0.4737742, g: 0.8040968, b: 1, a: 1}
+      - {r: 0.4488387, g: 0.81335485, b: 1, a: 1}
+      - {r: 0.42390323, g: 0.8226129, b: 1, a: 1}
+      - {r: 0.39896774, g: 0.831871, b: 1, a: 1}
+      - {r: 0.37403226, g: 0.84112906, b: 1, a: 1}
+      - {r: 0.34909678, g: 0.8503871, b: 1, a: 1}
+      - {r: 0.3241613, g: 0.8596452, b: 1, a: 1}
+      - {r: 0.2992258, g: 0.8689033, b: 1, a: 1}
+      - {r: 0.27429032, g: 0.8781613, b: 1, a: 1}
+      - {r: 0.24935484, g: 0.88741934, b: 1, a: 1}
+      - {r: 0.22441936, g: 0.89667743, b: 1, a: 1}
+      - {r: 0.19948387, g: 0.9059355, b: 1, a: 1}
+      - {r: 0.17454839, g: 0.91519356, b: 1, a: 1}
+      - {r: 0.1496129, g: 0.92445165, b: 1, a: 1}
+      - {r: 0.12467742, g: 0.9337097, b: 1, a: 1}
+      - {r: 0.099741936, g: 0.9429678, b: 1, a: 1}
+      - {r: 0.07480645, g: 0.9522258, b: 1, a: 1}
+      - {r: 0.049870968, g: 0.9614839, b: 1, a: 1}
+      - {r: 0.024935484, g: 0.970742, b: 1, a: 1}
+      - {r: 0, g: 0.98, b: 1, a: 1}
+  _chaotic:
+    m_OverrideState: 1
+    m_Value: 0.125
+  _noLockNoise:
+    m_OverrideState: 1
+    m_Value: 1
+  _density:
+    m_OverrideState: 1
+    m_Value: 0.221
+  _lock:
+    m_OverrideState: 1
+    m_Value: 0.97
+  _sharpen:
+    m_OverrideState: 1
+    m_Value: 1
+  _crush:
+    m_OverrideState: 1
+    m_Value: 0.512
+  _grid:
+    m_OverrideState: 1
+    m_Value: 0.048
+  _bleed:
+    m_OverrideState: 1
+    m_Value:
+      _grad:
+        serializedVersion: 2
+        key0: {r: 0, g: 1, b: 0.043819427, a: 0.67058825}
+        key1: {r: 0.0123438835, g: 0, b: 1, a: 0.67058825}
+        key2: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
+        key4: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0, g: 0, b: 0, a: 0}
+        key6: {r: 0, g: 0, b: 0, a: 0}
+        key7: {r: 0, g: 0, b: 0, a: 0}
+        ctime0: 0
+        ctime1: 65535
+        ctime2: 0
+        ctime3: 0
+        ctime4: 0
+        ctime5: 0
+        ctime6: 0
+        ctime7: 0
+        atime0: 0
+        atime1: 65535
+        atime2: 0
+        atime3: 0
+        atime4: 0
+        atime5: 0
+        atime6: 0
+        atime7: 0
+        m_Mode: 0
+        m_ColorSpace: 0
+        m_NumColorKeys: 2
+        m_NumAlphaKeys: 2
+      _pixels:
+      - {r: 0, g: 1, b: 0.043819427, a: 0.67058825}
+      - {r: 0.0003981898, g: 0.96774197, b: 0.07466396, a: 0.67058825}
+      - {r: 0.0007963796, g: 0.9354839, b: 0.10550849, a: 0.67058825}
+      - {r: 0.0011945693, g: 0.9032258, b: 0.13635303, a: 0.67058825}
+      - {r: 0.0015927592, g: 0.87096775, b: 0.16719756, a: 0.67058825}
+      - {r: 0.0019909488, g: 0.8387097, b: 0.1980421, a: 0.67058825}
+      - {r: 0.0023891386, g: 0.8064516, b: 0.22888663, a: 0.67058825}
+      - {r: 0.0027873286, g: 0.7741935, b: 0.25973117, a: 0.67058825}
+      - {r: 0.0031855183, g: 0.7419355, b: 0.29057568, a: 0.67058825}
+      - {r: 0.003583708, g: 0.70967746, b: 0.32142022, a: 0.67058825}
+      - {r: 0.0039818976, g: 0.67741936, b: 0.35226476, a: 0.67058825}
+      - {r: 0.0043800874, g: 0.6451613, b: 0.3831093, a: 0.67058825}
+      - {r: 0.004778277, g: 0.61290324, b: 0.41395384, a: 0.67058825}
+      - {r: 0.0051764674, g: 0.5806452, b: 0.44479838, a: 0.67058825}
+      - {r: 0.005574657, g: 0.5483871, b: 0.4756429, a: 0.67058825}
+      - {r: 0.005972847, g: 0.516129, b: 0.5064874, a: 0.67058825}
+      - {r: 0.0063710366, g: 0.48387098, b: 0.53733194, a: 0.67058825}
+      - {r: 0.0067692264, g: 0.4516129, b: 0.5681765, a: 0.67058825}
+      - {r: 0.007167416, g: 0.41935486, b: 0.599021, a: 0.67058825}
+      - {r: 0.0075656064, g: 0.38709676, b: 0.6298656, a: 0.67058825}
+      - {r: 0.007963795, g: 0.35483873, b: 0.6607101, a: 0.67058825}
+      - {r: 0.008361986, g: 0.32258064, b: 0.69155467, a: 0.67058825}
+      - {r: 0.008760175, g: 0.2903226, b: 0.7223992, a: 0.67058825}
+      - {r: 0.009158365, g: 0.2580645, b: 0.75324374, a: 0.67058825}
+      - {r: 0.009556554, g: 0.22580647, b: 0.78408825, a: 0.67058825}
+      - {r: 0.009954745, g: 0.19354838, b: 0.8149328, a: 0.67058825}
+      - {r: 0.010352935, g: 0.16129035, b: 0.84577733, a: 0.67058825}
+      - {r: 0.0107511245, g: 0.12903225, b: 0.87662184, a: 0.67058825}
+      - {r: 0.011149314, g: 0.09677422, b: 0.90746635, a: 0.67058825}
+      - {r: 0.011547504, g: 0.06451613, b: 0.9383109, a: 0.67058825}
+      - {r: 0.011945694, g: 0.032258093, b: 0.96915543, a: 0.67058825}
+      - {r: 0.0123438835, g: 0, b: 1, a: 0.67058825}
+  _screen:
+    m_OverrideState: 0
+    m_Value: 0
+  _noLock:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: -7410952011477806931}
+  - {fileID: -9106131184276800655}

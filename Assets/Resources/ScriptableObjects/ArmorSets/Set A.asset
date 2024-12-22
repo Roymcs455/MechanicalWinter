@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52b1fbde964cba49b2d0ab9eb32dee1, type: 3}
+  m_Name: Set A
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: 11400000, guid: 7d3809a741f00b440a18a1c324667f14, type: 2}
+  - {fileID: 11400000, guid: b0d3b3169843ce34cbf4f21c0e133c23, type: 2}
+  - {fileID: 11400000, guid: db46eb659b14d614c97c0a72b3cf1070, type: 2}
+  - {fileID: 11400000, guid: 20f610f2d87a12e4eaa99563e360b855, type: 2}
+  - {fileID: 11400000, guid: 9b2ca09bc85e23142a11c4261873f463, type: 2}
+  - {fileID: 11400000, guid: ac808ee081f3f0b47b680773a422eabf, type: 2}
+  - {fileID: 11400000, guid: fb8526eeb31881647ad77f7106e821ee, type: 2}
+  - {fileID: 11400000, guid: 649b3f4c21eb0b14081b81dd84f79f52, type: 2}
+  - {fileID: 11400000, guid: 0794c43f051665b4dbfab518cb9c59c5, type: 2}
+  - {fileID: 11400000, guid: 93290a4203dbfdd43b986c48eaf80385, type: 2}
+  - {fileID: 11400000, guid: 019d7510db16129498d7fd7cef908b25, type: 2}
+  setName: Slot A

@@ -9,6 +9,7 @@ public class SetBuilder : MonoBehaviour
 {
     public ArmorPieceSO[] armorPieceSOs;
     private ProxySet activeSet;
+    private ProxySet[] setList; 
     [SerializeField]
     private SetPiece[] spawnPoints;
 
@@ -21,19 +22,38 @@ public class SetBuilder : MonoBehaviour
         //PrintArmorPieceSO();
         //ArmorPieceSO[] newArray = SortByPiecePart(ChasisPart.HEAD);
         //Debug.Log($"Piece parts {SortByPiecePart(ChasisPart.TORSO)}");
-        activeSet = ScriptableObject.CreateInstance<ProxySet>();
-        activeSet.setName = "New Set";
-        activeSet.components = new ArmorPieceSO[(int)PieceLocation.TOTAL];
         LoadAllArmorPieceSO();
+        LoadAllSets();
+        ui.ListSets(setList);
+        activeSet = setList[0];
+        ShowAllPieces();
 
+    }
+
+    private void LoadAllSets()
+    {
+        setList = Resources.LoadAll<ProxySet>("");
+    }
+    public void ChangeActiveSet(int index)
+    {
+        activeSet = setList[index];
+        ShowAllPieces();
+    }
+    public void ShowAllPieces()
+    {
+        foreach (var piece in activeSet.components)
+        {
+            if (piece != null && piece.prefab!= null)
+                ShowModel(piece.pieceLocation,piece.prefab);    
+        }
     }
     public void ShowModel(PieceLocation pieceLocation, GameObject modelPrefab)
     {
-        Debug.Log($"Trying to show {pieceLocation}");
+        //Debug.Log($"Trying to show {pieceLocation}");
         SetPiece currentSpawnPoint = spawnPoints.Where(obj => obj.pieceLocation == pieceLocation).ToArray()[0];
         if (currentSpawnPoint != null)
         {
-            Debug.Log("currentSpawnPoint isn´t null");
+            //Debug.Log("currentSpawnPoint isn´t null");
             Transform currentTransform = currentSpawnPoint.transform;
             foreach (Transform child in currentTransform)
             {
@@ -85,5 +105,9 @@ public class SetBuilder : MonoBehaviour
             Debug.Log("Has dependant ");
             SetPiece(armorPieceSO.dependantSO);
         }
+    }
+    public void SaveSetOnslot()
+    {
+
     }
 }
