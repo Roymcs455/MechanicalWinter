@@ -10,12 +10,12 @@ public enum DamageTypes
 }
 public class Damage
 {
-    public DamageTypes damageType;
-    public float damage;
+    public DamageTypes type;
+    public float value;
     public Damage(DamageTypes damageType, float damage)
     {
-        this.damageType = damageType;
-        this.damage = damage;
+        this.type = damageType;
+        this.value = damage;
     }
 
 }

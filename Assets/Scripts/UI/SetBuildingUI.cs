@@ -52,7 +52,7 @@ public class SetBuildingUI : MonoBehaviour
     }
     private void InstantiateButton(ArmorPieceSO apSO)
     {
-        Debug.Log($"apSO: {apSO.pieceName} {apSO.pieceLocation} {apSO.chasisPart}");
+        //Debug.Log($"apSO: {apSO.pieceName} {apSO.pieceLocation} {apSO.chasisPart}");
         GameObject newItem = Instantiate(prefabListItem, listedArmorPieces);
         ArmorPieceListingUI newItemUI = newItem.GetComponent<ArmorPieceListingUI>();
         if (newItemUI != null )

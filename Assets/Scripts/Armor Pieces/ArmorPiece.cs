@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ArmorPiece : MonoBehaviour
+public class ArmorPiece : MonoBehaviour,IDamageable
 {
     private ChasisPart chasisPart;
     public PieceLocation location;
@@ -47,12 +47,12 @@ public class ArmorPiece : MonoBehaviour
         armorVisual.SetActive(true); 
         isPartAlive=true; 
     }
-    public void ReceiveDamage(Damage appliedDamage,int projectileID)
+    public void ReceiveDamage(Damage appliedDamage,int projectileID = 0)
     {
         if (isPartAlive)
         {
             float multiplier;
-            switch (appliedDamage.damageType)
+            switch (appliedDamage.type)
             {
                 case DamageTypes.EXPLOSIVE:
                     multiplier = armorStats.explosiveResistance;
@@ -68,7 +68,7 @@ public class ArmorPiece : MonoBehaviour
                     break;
 
             }
-            OnArmorReceiveDamage?.Invoke(this, new ArmorPieceEventArgs(chasisPart, appliedDamage.damage * multiplier, projectileID));
+            OnArmorReceiveDamage?.Invoke(this, new ArmorPieceEventArgs(chasisPart, appliedDamage.value * multiplier, projectileID));
         }
         else
         {

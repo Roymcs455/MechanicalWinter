@@ -18,6 +18,8 @@ public class PlayerCamera: MonoBehaviour
     float crosshairDistance=100f;
     [SerializeField]
     private LayerMask collidingLayer;
+    [SerializeField]
+    private float targetMinDistance;
 
     private float xRotation= 0.0f, yRotation = 0.0f;
     private void Start()

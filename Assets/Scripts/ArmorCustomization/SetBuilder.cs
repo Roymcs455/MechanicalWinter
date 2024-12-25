@@ -91,8 +91,8 @@ public class SetBuilder : MonoBehaviour
     public ArmorPieceSO[] SortByPiecePart(ChasisPart part)
     {
         ArmorPieceSO[] sortedArray = armorPieceSOs.Where(obj => (int)obj.chasisPart == (int)part && obj.pieceHealth != 0).ToArray();
-        foreach (ArmorPieceSO piece in sortedArray)
-            Debug.Log($"Part: {piece.chasisPart}, {piece.pieceName}, {piece.chasisPart}, {piece.pieceLocation}");
+        //foreach (ArmorPieceSO piece in sortedArray)
+        //    Debug.Log($"Part: {piece.chasisPart}, {piece.pieceName}, {piece.chasisPart}, {piece.pieceLocation}");
         return sortedArray;
     }
 
