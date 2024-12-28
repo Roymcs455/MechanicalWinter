@@ -20,5 +20,6 @@ MonoBehaviour:
   spawnRotation: {x: 0, y: 0, z: 0}
   damageConfig: {fileID: 11400000, guid: d7be01853407cd74b816eff5dbb8f23d, type: 2}
   shootConfig: {fileID: 11400000, guid: 12c8dfa48a56b9b4d89f47ea72683a29, type: 2}
-  trailConfig: {fileID: 11400000, guid: f4610ff6c9dea864787093895676fc92, type: 2}
+  trailConfig: {fileID: 11400000, guid: df113fa147b03f347974423f1ff22641, type: 2}
   audioConfig: {fileID: 11400000, guid: 4bf09285add91294fa59fe79ed8b8ce3, type: 2}
+  AnimationHandler: {fileID: 0}

@@ -21,4 +21,4 @@ MonoBehaviour:
   pieceHealth: 100
   chasisPart: 3
   pieceLocation: 8
-  dependantSO: {fileID: 0}
+  dependantSO: {fileID: 11400000, guid: e7f8373853f97e64387d7e52282f62f2, type: 2}

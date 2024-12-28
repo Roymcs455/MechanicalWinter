@@ -69,12 +69,12 @@ public class SetBuilder : MonoBehaviour
         ui.ShowButtons(subarray);
     }
 
-    public void CreateSet(string setName)
-    {
-        ProxySet newProxySet = ProxySet.CreateInstance<ProxySet>();
-        newProxySet.setName = "setName";
-        AssetDatabase.CreateAsset(newProxySet, $"Assets/Resources/ScriptableObjects/Armorsets/{setName}.asset");
-    }
+    //public void CreateSet(string setName)
+    //{
+    //    ProxySet newProxySet = ProxySet.CreateInstance<ProxySet>();
+    //    newProxySet.setName = "setName";
+    //    AssetDatabase.CreateAsset(newProxySet, $"Assets/Resources/ScriptableObjects/Armorsets/{setName}.asset");
+    //}
     public void LoadAllArmorPieceSO()
     {
         armorPieceSOs = Resources.LoadAll<ArmorPieceSO>("");

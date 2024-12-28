@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbe0699f385bc0b4dadad5f582b95ccb, type: 3}
-  m_Name: Gun 1 Trail
+  m_Name: Gun 2 Trail
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 6888d65d9aaf0964eb1958d4b127d8b8, type: 2}
   widthCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0.46327472
-      inSlope: -0.0046009733
-      outSlope: -0.0046009733
+      time: -0.003540039
+      value: 0.35359454
+      inSlope: -0.13965626
+      outSlope: -0.13965626
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.5640062
-      value: 0.46067974
-      inSlope: -0.03174994
-      outSlope: -0.03174994
+      time: 0.54633844
+      value: 0.27680057
+      inSlope: -0.37490198
+      outSlope: -0.37490198
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0.43500018
-      inSlope: -0.058898907
-      outSlope: -0.058898907
+      value: 0
+      inSlope: -0.6101477
+      outSlope: -0.6101477
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
