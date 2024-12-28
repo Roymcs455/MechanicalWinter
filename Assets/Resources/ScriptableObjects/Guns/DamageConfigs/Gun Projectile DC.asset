@@ -68,7 +68,7 @@ MonoBehaviour:
   type: 1
   knockbackForce: 1000
   isExplosive: 1
-  explosionRadius: 3
+  explosionRadius: 0.75
   explosionLayerMask:
     serializedVersion: 2
     m_Bits: 1416

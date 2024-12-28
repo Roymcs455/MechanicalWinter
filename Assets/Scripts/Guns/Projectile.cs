@@ -2,15 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Bullet;
+
 
 public class Projectile : MonoBehaviour
 {
     private Rigidbody rb;
     public LayerMask interactionMask;
-    public LayerMask ground;
-    public LayerMask hitboxLayer;
-    
+
     public bool explosive;
     public float explosionRadius = 5.0f;
     public float explosionPower = 10.0f;
@@ -37,12 +35,16 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        OnCollision?.Invoke(this, collision);
-          
-
+        if(explosive)
+        {
+            Explosion();
+        }
+        else
+        {
+            ContactDamage(collision);
+        }
+        Destroy(gameObject);
     }
-
     private void ContactDamage(Collision collision)
     {
         foreach (ContactPoint contact in collision.contacts)
@@ -57,7 +59,7 @@ public class Projectile : MonoBehaviour
     private void Explosion()
     {
         Vector3 explosionPos = transform.position;
-        Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius, interactionMask | hitboxLayer);
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius, interactionMask);
         foreach (Collider hit in colliders)
         {
             Rigidbody hitRB = hit.GetComponent<Rigidbody>();
@@ -72,22 +74,5 @@ public class Projectile : MonoBehaviour
                 //Debug.Log($"Exploding {hit.gameObject.name}");
             }
         }    
-    }
-    public void Spawn(Vector3 spawnForce)
-    {
-        transform.forward = spawnForce.normalized;
-        rb.AddForce(spawnForce, ForceMode.VelocityChange);
-        StartCoroutine(DelayedDisable(disableTime));
-
-    }
-    private IEnumerator DelayedDisable(float time)
-    {
-        yield return new WaitForSeconds(time);
-        OnCollisionEnter(null);
-
-    }
-    private bool IsInLayerMask(GameObject obj, LayerMask mask)
-    {
-        return (mask.value & (1 << obj.layer)) != 0;
     }
 }

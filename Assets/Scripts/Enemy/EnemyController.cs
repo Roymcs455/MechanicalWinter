@@ -27,8 +27,8 @@ public class EnemyController : MonoBehaviour
     private Vector3 pointOriginalPosition;
     public float updateSpeed = 0.20f;
 
-    public float viewAngle = 120.0f;
-    public float ShootAngle = 60.0f;
+    public float viewAngle = 180.0f;
+    public float ShootAngle = 90.0f;
 
     private float health = 100.0f;
     private NavMeshAgent agent;
@@ -41,6 +41,15 @@ public class EnemyController : MonoBehaviour
     public Rig rig;
     private Material pointerMaterial;
     private bool playerInSight = false;
+
+    private Coroutine rigWeightCoroutine;
+    private float rigTargetValue= 0;
+    private float rigSmoothTime = 2f;
+    private bool rigIncrementing;
+
+    private EnemyWeapon weapon;
+    private float lastShootTime = 0;
+    private float shootDelay = 0.5f;
 
     // Start is called before the first frame update
     void Awake()
@@ -60,6 +69,7 @@ public class EnemyController : MonoBehaviour
         if (rend.material == null) return;
         pointerMaterial = rend.material;
         rend.material.color = Color.white;  
+        weapon = GetComponent<EnemyWeapon>();
         Debug.Log("exito");
 
     }
@@ -68,7 +78,24 @@ public class EnemyController : MonoBehaviour
         
         HandleAnimations();
         if(standing)
+        {
             LookAtTarget();
+            if (agentState == State.PATROL)
+            {
+                transform.Rotate(0,rotationSpeed*Time.deltaTime,0);
+            }
+
+        }
+        if(playerInSight)
+        {
+            pointTransform.position = target.position;
+        }
+        if( Time.time > lastShootTime+shootDelay && agentState == State.ATTACK) 
+        {
+            weapon.Shoot();
+            lastShootTime = Time.time;
+        }
+        
 
     }
 
@@ -108,14 +135,22 @@ public class EnemyController : MonoBehaviour
                 if (CanSeePlayer())
                 {
                     playerInSight= true;
-                    agent.stoppingDistance = 0;
+                    agent.stoppingDistance = stoppingDistance ;
                     agent.SetDestination(target.position);
+                    agentState = State.ATTACK;
                 }
                 else
                 {
-                    agent.stoppingDistance = stoppingDistance;
+                    agent.stoppingDistance = 0;
+                    agent.SetDestination(agent.destination);
                     playerInSight = false;
+                    agentState = State.PATROL;
                 }
+            }
+            else
+            {
+                agentState = State.IDLE;
+                playerInSight = false;
             }
             yield return wait;
         }
@@ -152,8 +187,7 @@ public class EnemyController : MonoBehaviour
                 {
                     if (hit.collider.CompareTag("Player"))
                     {
-                        rig.weight = 1.0f;
-                        pointTransform.position = hit.point;
+                        rig.weight = 1;
                         pointerMaterial.color = new Color(1,0,0,1);
                         return true;
                     }
@@ -166,6 +200,7 @@ public class EnemyController : MonoBehaviour
 
         return false;
     }
+   
     private void OnTriggerEnter(Collider other)
     {
         if( other.CompareTag("Player") )
