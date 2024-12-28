@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ public class Armor : MonoBehaviour, IAgent
     //Este arreglo guarda el id del ultimo objeto de daño a cada pieza.
     private bool[] pieceDamagedThisFrame;
     public ProxySet proxySet;
+    public event Action OnDeathPlayer;
 
     private void Awake()
     {
@@ -82,5 +84,6 @@ public class Armor : MonoBehaviour, IAgent
     public void Die()
     {
         gameObject.SendMessage("AgentIsDead");
+        OnDeathPlayer?.Invoke();
     }
 }

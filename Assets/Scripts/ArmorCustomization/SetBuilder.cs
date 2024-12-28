@@ -24,7 +24,7 @@ public class SetBuilder : MonoBehaviour
         //Debug.Log($"Piece parts {SortByPiecePart(ChasisPart.TORSO)}");
         LoadAllArmorPieceSO();
         LoadAllSets();
-        ui.ListSets(setList);
+        //ui.ListSets(setList)
         activeSet = setList[0];
         ShowAllPieces();
 

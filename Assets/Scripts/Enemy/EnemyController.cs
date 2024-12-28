@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     private const string JUMP = "Jump";
     private const string LAND = "Land";
 
+    public event Action OnDeath;
 
     public State agentState;
     public float stoppingDistance;
@@ -218,5 +219,6 @@ public class EnemyController : MonoBehaviour
     public void AgentIsDead()
     {
         gameObject.SetActive(false);
+        OnDeath?.Invoke();
     }
 }

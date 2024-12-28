@@ -11,10 +11,18 @@ public class PlayerAction : MonoBehaviour
     [SerializeField]
     private AnimationHandler playerAnimationHandler;
     private int weapon;
+    private InputManager inputManager;
     private void Start()
     {
         weapon = 0;
         gunSelector.activeGun.ShootEvent += ActiveGun_ShootEvent;
+        inputManager = InputManager.Instance;
+        inputManager.changeWeapon.performed += ChangeWeapon_performed;
+    }
+
+    private void ChangeWeapon_performed(InputAction.CallbackContext obj)
+    {
+        ChangeWeapons();
     }
 
     private void ActiveGun_ShootEvent()
@@ -29,13 +37,18 @@ public class PlayerAction : MonoBehaviour
             gunSelector.activeGun.Shoot();
             
         }
-        if (Mouse.current.rightButton.isPressed)
-        {
-            weapon++;
-            gunSelector.activeGun.ShootEvent -= ActiveGun_ShootEvent;
-            gunSelector.ChangeWeapon((GunType)(weapon%2));
-            gunSelector.activeGun.ShootEvent += ActiveGun_ShootEvent;
-        }
-        
-    } 
+        //if (Mouse.current.rightButton.isPressed)
+        //{
+        //    ChangeWeapons();
+        //}
+
+    }
+
+    private void ChangeWeapons()
+    {
+        weapon++;
+        gunSelector.activeGun.ShootEvent -= ActiveGun_ShootEvent;
+        gunSelector.ChangeWeapon((GunType)(weapon % 2));
+        gunSelector.activeGun.ShootEvent += ActiveGun_ShootEvent;
+    }
 }

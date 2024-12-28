@@ -40,7 +40,7 @@ MonoBehaviour:
   active: 1
   _weight:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.327
   _power:
     m_OverrideState: 1
     m_Value: 0.662

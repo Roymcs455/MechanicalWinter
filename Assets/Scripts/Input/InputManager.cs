@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour
     private PlayerControls playerControls;
     [Header("Input Actions Map")]
     public InputActionAsset inputActions;
-    public InputAction jumpAction, sprintAction, fireAction, resetAction;
+    public InputAction jumpAction, sprintAction, fireAction, resetAction, changeWeapon;
     
 
     public static InputManager Instance {  get { return _instance; } }
@@ -34,6 +34,7 @@ public class InputManager : MonoBehaviour
         fireAction.Enable();
         resetAction = inputActions.FindAction("Reset"); 
         resetAction.Enable();
+        changeWeapon = inputActions.FindAction("ChangeWeapon"); changeWeapon.Enable();
 
     }
     private void OnDisable()
