@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 public enum GunType
 {
@@ -22,6 +24,7 @@ public class GunSO : ScriptableObject
     public ShootConfigurationSO shootConfig;
     public TrailConfigurationSO trailConfig;
     public AudioConfigurationSO audioConfig;
+    public AnimationHandler AnimationHandler;
 
     private MonoBehaviour activeMono;
     private GameObject instanciatedModel;
@@ -31,6 +34,8 @@ public class GunSO : ScriptableObject
     private ParticleSystem shootSystem;
     private ObjectPool<Bullet> bulletPool;
     private ObjectPool<TrailRenderer> trailPool;
+
+    public event Action ShootEvent;
 
     public void Spawn(Transform parent, MonoBehaviour activeMonoBehaviour)
     {
@@ -49,18 +54,33 @@ public class GunSO : ScriptableObject
         shootSystem = instanciatedModel.GetComponentInChildren<ParticleSystem>();
         shootingAudioSource = instanciatedModel.GetComponent<AudioSource>();    
     }
+    public void Despawn()
+    {
+        activeMono.StopAllCoroutines();
+        
+        LastShootTime = 0;
+        trailPool.Clear();
+        if(!shootConfig.isHitscan) 
+        {
+            bulletPool.Clear(); 
+        }
+        Destroy(shootingAudioSource);
+        Destroy(shootSystem);
+        Destroy(instanciatedModel);
+    }
 
     public void Shoot()
     {
         if (Time.time > shootConfig.fireRate + LastShootTime)
         {
             LastShootTime = Time.time;
+            ShootEvent?.Invoke();
             shootSystem.Play();
             audioConfig.PlayShootingClip(shootingAudioSource);
             Vector3 shootDirection = shootSystem.transform.forward + new Vector3(
-                    Random.Range(-shootConfig.spread.x, shootConfig.spread.x),
-                    Random.Range(-shootConfig.spread.y, shootConfig.spread.y),
-                    Random.Range(-shootConfig.spread.z, shootConfig.spread.z)
+                    UnityEngine.Random.Range(-shootConfig.spread.x, shootConfig.spread.x),
+                    UnityEngine.Random.Range(-shootConfig.spread.y, shootConfig.spread.y),
+                    UnityEngine.Random.Range(-shootConfig.spread.z, shootConfig.spread.z)
                 );
             shootDirection.Normalize();
             if (shootConfig.isHitscan)
@@ -76,7 +96,7 @@ public class GunSO : ScriptableObject
 
     private void DoProjectileShoot(Vector3 shootDirection)
     {
-        Debug.Log($"Shoot direction: {shootDirection}");
+        //Debug.Log($"Shoot direction: {shootDirection}");
         Bullet bullet = bulletPool.Get();
         bullet.gameObject.SetActive(true);
         bullet.OnCollision += HandleBulletCollision;
@@ -108,14 +128,54 @@ public class GunSO : ScriptableObject
         {
             //Buscando contact points, no siempre el primero en tocar el el index 0
             ContactPoint contactPoint = col.GetContact(0);
-            HandleBulletImpact(
-                Vector3.Distance(contactPoint.point, bullet.SpawnLocation),
-                contactPoint.point,
-                contactPoint.normal,
-                contactPoint.otherCollider
-            );
+            if (damageConfig.isExplosive)
+            {
+                HandleExplosion(contactPoint);
+
+            }
+            else
+            {
+                HandleBulletImpact(
+                    Vector3.Distance(contactPoint.point, bullet.SpawnLocation),
+                    contactPoint.point,
+                    contactPoint.normal,
+                    contactPoint.otherCollider
+                );
+            }
         }
     }
+
+    private void HandleExplosion(ContactPoint contactPoint)
+    {
+        Collider[] colliders = Physics.OverlapSphere(contactPoint.point,
+                            damageConfig.explosionRadius,
+                            damageConfig.explosionLayerMask);
+        //Debug.Log($"Collision with {colliders.Length} objects");
+        foreach (Collider collider in colliders)
+        {
+            Rigidbody rb = collider.GetComponent<Rigidbody>();
+            //if (Physics.Raycast(contactPoint.thisCollider.transform.position,
+            //    collider.transform.position,
+            //    out RaycastHit hit,
+            //    damageConfig.explosionRadius))
+            //{
+            //    if (collider == hit.collider )
+            //    {
+            //        Debug.Log($"Match {collider.name}");
+            //    }
+            //}
+            //Debug.Log($"thisCollider: {contactPoint.thisCollider.name}, {collider.name}, {hit.collider.name}");
+            if (rb != null)
+                rb.AddExplosionForce(damageConfig.knockbackForce / 2, contactPoint.point, damageConfig.explosionRadius, damageConfig.knockbackForce / 2);
+
+            if (collider.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.ReceiveDamage(damageConfig.GetDamage(Vector3.Distance(contactPoint.point,collider.transform.position)));
+            }
+
+        }
+    }
+
     private void HandleBulletImpact(float distanceTraveled, Vector3 hitLocation, Vector3 hitNormal, Collider hitCollider)
     {
         if (hitCollider.TryGetComponent(out IDamageable damageable))
@@ -182,10 +242,6 @@ public class GunSO : ScriptableObject
             HandleBulletImpact(distance, endPoint, hit.normal, hit.collider);
             
         }
-
-        
-
-
 
         yield return new WaitForSeconds(trailConfig.duration);
         yield return null;  

@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Gun Projectile Sound
   m_EditorClassIdentifier: 
   Volume: 1
-  fireClips: []
+  fireClips:
+  - {fileID: 8300000, guid: 9982d99edad7ae944a8122ab47ca7c5a, type: 3}
+  - {fileID: 8300000, guid: 03b3f4c81cab8c04ca94a4eeb7e377b5, type: 3}
+  - {fileID: 8300000, guid: 84621d412fc7dd54d9f1b303d17d9f8a, type: 3}
+  - {fileID: 8300000, guid: 043689e5621f9ec46997db8f52b5fb06, type: 3}

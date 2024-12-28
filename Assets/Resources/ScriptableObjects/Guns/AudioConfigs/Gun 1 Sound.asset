@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Volume: 1
   fireClips:
-  - {fileID: 8300000, guid: bd58204c13895da48bd03c3ccc088b1f, type: 3}
+  - {fileID: 8300000, guid: c6b78423dce69bd46b6950d1c50bf186, type: 3}
+  - {fileID: 8300000, guid: e079af8b66c3d224cbb4e5b71991418f, type: 3}
+  - {fileID: 8300000, guid: e0c61e5e6f975a74d8c64403c5cc6364, type: 3}
+  - {fileID: 8300000, guid: 44b52bfa6816d534fb0469b94bf5e16a, type: 3}

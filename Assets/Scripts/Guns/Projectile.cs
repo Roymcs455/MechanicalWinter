@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Bullet;
 
 public class Projectile : MonoBehaviour
 {
@@ -8,16 +10,21 @@ public class Projectile : MonoBehaviour
     public LayerMask interactionMask;
     public LayerMask ground;
     public LayerMask hitboxLayer;
-
+    
+    public bool explosive;
     public float explosionRadius = 5.0f;
     public float explosionPower = 10.0f;
     public DamageTypes damageType;
-    public float damage = 0.0f;
+    public float damage = 50.0f;
+    public float disableTime;
+
+    public delegate void CollisionEvent(Projectile bullet, Collision col);
+    public event CollisionEvent OnCollision;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         
-        Destroy(gameObject, 15);
+        //Destroy(gameObject, 15);
     }
     private void FixedUpdate()
     {
@@ -30,31 +37,53 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        if (IsInLayerMask(collision.gameObject, interactionMask | hitboxLayer | ground))
-        {
-            Vector3 explosionPos = transform.position;
-            Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius,interactionMask | hitboxLayer);
-            foreach (Collider hit in colliders)
-            {
-                Rigidbody hitRB = hit.GetComponent<Rigidbody>();
-                float distance = (hit.transform.position - explosionPos).magnitude;
-                Damage appliedDamage = new Damage(DamageTypes.EXPLOSIVE, damage * distance / explosionRadius);
 
-                ArmorPiece hitArmorPiece = hit.gameObject.GetComponent<ArmorPiece>();
-                if (hitArmorPiece != null)
-                    hitArmorPiece.ReceiveDamage(appliedDamage,gameObject.GetInstanceID());
-                
-                if (hitRB != null)
-                {
-                    hitRB.AddExplosionForce(explosionPower, explosionPos, explosionRadius, 3.0F,ForceMode.Impulse);
-                    //Debug.Log($"Exploding {hit.gameObject.name}");
-                }
-                
+        OnCollision?.Invoke(this, collision);
+          
+
+    }
+
+    private void ContactDamage(Collision collision)
+    {
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            if (contact.otherCollider.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.ReceiveDamage(new Damage(damageType, damage));
             }
-            Destroy(gameObject);
         }
-        
+    }
+
+    private void Explosion()
+    {
+        Vector3 explosionPos = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius, interactionMask | hitboxLayer);
+        foreach (Collider hit in colliders)
+        {
+            Rigidbody hitRB = hit.GetComponent<Rigidbody>();
+            float distance = Vector3.Distance(hit.transform.position, explosionPos);
+            if(hit.TryGetComponent(out IDamageable damageable) )
+            {
+                damageable.ReceiveDamage(new Damage(damageType, damage * distance / explosionRadius));
+            }
+            if (hitRB != null)
+            {
+                hitRB.AddExplosionForce(explosionPower/2, explosionPos, explosionRadius, explosionPower / 2, ForceMode.Impulse);
+                //Debug.Log($"Exploding {hit.gameObject.name}");
+            }
+        }    
+    }
+    public void Spawn(Vector3 spawnForce)
+    {
+        transform.forward = spawnForce.normalized;
+        rb.AddForce(spawnForce, ForceMode.VelocityChange);
+        StartCoroutine(DelayedDisable(disableTime));
+
+    }
+    private IEnumerator DelayedDisable(float time)
+    {
+        yield return new WaitForSeconds(time);
+        OnCollisionEnter(null);
 
     }
     private bool IsInLayerMask(GameObject obj, LayerMask mask)

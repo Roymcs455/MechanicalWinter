@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Armor : MonoBehaviour
+public class Armor : MonoBehaviour, IAgent
 {
     public ArmorPiece[] armorPieces;
-    private float chasisHealth;
+    
     private float[] armorHealth;
     //Este arreglo guarda el id del ultimo objeto de daño a cada pieza.
-    private int[] lastDamagingID;
+    private bool[] pieceDamagedThisFrame;
     public ProxySet proxySet;
 
     private void Awake()
@@ -17,9 +18,8 @@ public class Armor : MonoBehaviour
     }
     private void Start()
     {
-        chasisHealth = 100;
         armorHealth = new float[(int)ChasisPart.TOTAL];
-        lastDamagingID = new int[(int)ChasisPart.TOTAL];
+        pieceDamagedThisFrame = new bool[(int)ChasisPart.TOTAL];
         foreach (ArmorPiece armorPiece in armorPieces)
         {
             armorPiece.OnArmorReceiveDamage += ArmorPiece_DamageEvent;
@@ -28,19 +28,29 @@ public class Armor : MonoBehaviour
                 armorHealth[(int)pieceSO.chasisPart] = pieceSO.pieceHealth;
         }
     }
-
+    private void FixedUpdate()
+    {
+        //Reiniciando el arreglo para las piezas, sirve para no hacer doble daño en hitbox compuestos.
+        System.Array.Clear(pieceDamagedThisFrame, 0, pieceDamagedThisFrame.Length);
+    }
     private void ArmorPiece_DamageEvent(object sender, ArmorPiece.ArmorPieceEventArgs e)
     {
         Debug.Log($"armorPiece damaging: {e.chasisPart} Applied Damage: {e.appliedDamage}");
-        if (e.projectileID != lastDamagingID[(int)e.chasisPart])
+        if (!pieceDamagedThisFrame[(int)e.chasisPart])
         {
-            lastDamagingID[(int)e.chasisPart] = e.projectileID;
+            
+            pieceDamagedThisFrame[(int)e.chasisPart] = true;
             armorHealth[(int)e.chasisPart] -= e.appliedDamage;
             if (armorHealth[(int)e.chasisPart] <= 0.0f )
             {
                 DisableVisual(e.chasisPart);
                 Debug.Log($"armorPiece {e.chasisPart} has been destroyed");
             }
+        }
+        if (armorHealth.All(health => health <= 0.0f))
+        {
+            Debug.Log("All pieces broken");
+            gameObject.SendMessage("Die");
         }
         
     }
@@ -67,5 +77,10 @@ public class Armor : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Die()
+    {
+        gameObject.SendMessage("AgentIsDead");
     }
 }

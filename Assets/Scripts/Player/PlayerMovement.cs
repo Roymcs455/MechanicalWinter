@@ -237,4 +237,9 @@ public class PlayerMovement : MonoBehaviour
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
+
+    public void AgentIsDead()
+    {
+        Debug.Log("Player Dies");
+    }
 }

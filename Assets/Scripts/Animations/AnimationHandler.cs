@@ -47,9 +47,9 @@ public class AnimationHandler : MonoBehaviour
         
         animator.SetBool(isOnGround, playerMovementController.grounded);
     }
-    void Step()
+    public void Shoot()
     {
-        Debug.Log("Took Step");
+        animator.SetTrigger(shoot);
     }
     
 

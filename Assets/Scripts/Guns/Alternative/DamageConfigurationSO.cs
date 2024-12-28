@@ -12,6 +12,10 @@ public class DamageConfigurationSO : ScriptableObject
     [SerializeField]
     public float knockbackForce= 5.0f;
 
+    public bool isExplosive = true;
+    public float explosionRadius = 1.0f;
+    public LayerMask explosionLayerMask;
+
     public void Reset()
     {
         damageCurve.mode = ParticleSystemCurveMode.Curve;

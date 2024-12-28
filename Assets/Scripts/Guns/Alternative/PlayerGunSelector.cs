@@ -17,6 +17,11 @@ public class PlayerGunSelector : MonoBehaviour
 
     private void Start()
     {
+        SetGun();
+    }
+
+    private void SetGun()
+    {
         GunSO gun = guns.Find(gun => gun.gunType == gunType);
         if (gun == null)
         {
@@ -25,5 +30,13 @@ public class PlayerGunSelector : MonoBehaviour
         }
         activeGun = gun;
         gun.Spawn(gunParent, this);
+    }
+
+    public void ChangeWeapon(GunType gunType)
+    {
+        
+        activeGun.Despawn();
+        this.gunType = gunType;
+        SetGun();
     }
 }

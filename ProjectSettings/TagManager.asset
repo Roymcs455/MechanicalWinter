@@ -14,9 +14,9 @@ TagManager:
   - Ground
   - Hitbox
   - Projectile
-  - Obstacle
-  - 
-  - 
+  - StaticObstacle
+  - DynamicObstacle
+  - Enemy
   - 
   - 
   - 
